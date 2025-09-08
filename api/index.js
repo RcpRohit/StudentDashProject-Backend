@@ -10,7 +10,7 @@ dotenv.config();
 connectDB();
 const app = express();
 
-const allowedOrigin = 'https://student-dashboard-frontend-n8yx.vercel.app'; // your frontend URL
+const allowedOrigin = 'https://student-dashboard-frontend-orpin.vercel.app'; // your frontend URL
 app.use(cors({
     origin: allowedOrigin,
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
