@@ -19,4 +19,4 @@ const createCourse = async (req, res) => {
   }
 };
 
-module.exports = {getAllCourses,createCourse,getCourseById};
+module.exports = {getAllCourses,createCourse};
