@@ -4,18 +4,23 @@ const cors = require('cors');
 const connectDB = require('../config/db');
 const path = require('path');
 const studentRoutes = require('../routes/students');
-const couseRoutes = require('../routes/courses')
+const couseRoutes = require('../routes/courses'); // fixed typo
 dotenv.config();
 
 connectDB();
 const app = express();
-// const app = express();
-app.use(cors());
+
+const allowedOrigin = 'https://student-dashboard-frontend-n8yx.vercel.app/'; // your frontend URL
+app.use(cors({
+    origin: allowedOrigin,
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true
+}));
+
 app.use(express.json());
 
 app.use('/api/students', studentRoutes);
-
-app.use('/api/course',couseRoutes);
+app.use('/api/course', couseRoutes);
 
 app.get('/', (req, res) => {
     res.send('Internship Portal Backend Running');
