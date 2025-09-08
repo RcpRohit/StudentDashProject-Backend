@@ -12,7 +12,7 @@ const app = express();
 
 // CORS middleware should come BEFORE your routes
 app.use(cors({
-    origin: 'https://student-dashboard-frontend-orpin.vercel.app', // Remove the trailing slash
+    origin: 'http://localhost:5173', 
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true
 }));
