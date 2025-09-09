@@ -10,16 +10,15 @@ connectDB();
 
 const app = express();
 
-// CORS middleware should come BEFORE your routes
 app.use(cors({
     origin: 'http://localhost:5173', 
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true
 }));
 
+
 app.use(express.json());
 
-// Your routes
 app.use('/api/students', studentRoutes);
 app.use('/api/course', courseRoutes);
 
